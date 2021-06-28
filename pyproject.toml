@@ -13,10 +13,11 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-click = "^8.0.1"
+click = "8.0.1"
 config = {git = "https://github.com/clayman083/config.git", rev = "v0.3.0"}
 python = "^3.9"
-structlog = "^21.1.0"
+structlog = "21.1.0"
+uvloop = "0.15.2"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
@@ -37,3 +38,4 @@ rope = "*"
 ipython = "^7.12.0"
 types-click = "^7.1.2"
 types-orjson = "^0.1.1"
+types-setuptools = "57.0.0"
