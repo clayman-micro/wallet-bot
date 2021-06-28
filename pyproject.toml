@@ -1,0 +1,39 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "wallet-bot"
+version = "1.0.0"
+description = "Personal finance bot"
+authors = ["Kirill Sumorokov <sumorokov.k@gmail.com>"]
+license = "MIT"
+packages = [
+    { include = "bot", from = "src" }
+]
+
+[tool.poetry.dependencies]
+click = "^8.0.1"
+config = {git = "https://github.com/clayman083/config.git", rev = "v0.3.0"}
+python = "^3.9"
+structlog = "^21.1.0"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+coverage = "*"
+faker = "*"
+flake8 = "*"
+flake8-bugbear = "*"
+flake8-builtins-unleashed = "*"
+flake8-comprehensions = "*"
+flake8-import-order = "*"
+flake8-print = "*"
+flake8-pytest = "*"
+mypy = "*"
+pytest = "*"
+pytest-aiohttp = "*"
+pytest-postgres = "*"
+rope = "*"
+ipython = "^7.12.0"
+types-click = "^7.1.2"
+types-orjson = "^0.1.1"

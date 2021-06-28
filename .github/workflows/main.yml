@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+  push:
+    tags:
+      - '!refs/tags/*'
+    branches:
+      - '*'
+  pull_request:
+
+
+jobs:
+  linters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.9'
+          architecture: 'x64'
+
+      - name: Install requirements
+        # Устанавливаем зависимости
+        run: pip install poetry tox
+
+      - name: Run tests
+        env:  
+          TOXENV: lint
+        run: tox
